@@ -443,7 +443,10 @@ fn print_command(line: Line, color: &Coloring) {
     };
 
     let mut stream = StandardStream::stderr(color_choice);
-    let _ = stream.set_color(ColorSpec::new().set_bold(true).set_fg(Some(Green)));
+    let mut color_spec = ColorSpec::new();
+    color_spec.set_bold(true);
+    color_spec = color_spec.set_fg(Some(Green));
+    let _ = stream.set_color(&color_spec);
     let _ = write!(stream, "{:>12}", "Running");
     let _ = stream.reset();
     let _ = writeln!(stream, " `{}`", line);
