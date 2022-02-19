@@ -19,7 +19,7 @@ $ cargo rustc --profile=check -- -Zunpretty=expanded
 
 ## Installation
 
-Install with **`cargo install cargo-expand`**.
+Install with **`cargo install --git https://github.com/DmitrijVC/cargo-expand cargo-expand`**.
 
 This command optionally uses [rustfmt] to format the expanded output. The
 resulting code is typically much more readable than what you get from the
